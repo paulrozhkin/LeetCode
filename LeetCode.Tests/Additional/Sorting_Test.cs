@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AutoFixture;
 using FluentAssertions;
 using LeetCode.Additional;
@@ -20,7 +18,12 @@ namespace LeetCode.Tests.Additional
         {
             var random = new Random();
 
-            var arrays = new List<int[]> {new[] {6, 4, -3, 5}};
+            var arrays = new List<int[]>
+            {
+                new[] {6, -3, -2},
+                new[] {6, 4, -3, 5},
+                new[] {6, 4, -3, 1, 2, 1, 7, 10}
+            };
 
             for (var i = 0; i < 5; i++)
             {
@@ -47,6 +50,39 @@ namespace LeetCode.Tests.Additional
         public void InsertionSortTest()
         {
             SortTest(Sorting.InsertionSort);
+        }
+
+        [Fact]
+        public void ShellSortTest()
+        {
+            SortTest(Sorting.ShellSort);
+        }
+
+        [Fact]
+        public void MergeSortHighLevelTest()
+        {
+            SortTest(Sorting.MergeSortHighLevel);
+        }
+
+        [Fact]
+        public void MergeSortTest()
+        {
+            SortTest(Sorting.MergeSort);
+        }
+
+        [Fact]
+        public void QuickSortTest()
+        {
+            SortTest(Sorting.QuickSort);
+        }
+
+        private void SortTest(Func<int[], int[]> sortingAction)
+        {
+            foreach (var array in _arrays)
+            {
+                var resultedArray = sortingAction(array);
+                resultedArray.Should().BeInAscendingOrder();
+            }
         }
 
         private void SortTest(Action<int[]> sortingAction)
