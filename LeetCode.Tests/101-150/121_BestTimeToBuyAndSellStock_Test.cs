@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LeetCode._101_150;
 using Xunit;
 
-namespace LeetCode._101_150
+namespace LeetCode.Tests._101_150
 {
     public class _121_BestTimeToBuyAndSellStock_Test
     {
