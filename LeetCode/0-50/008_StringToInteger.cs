@@ -1,5 +1,4 @@
-﻿using System;
-using static System.Char;
+﻿using static System.Char;
 
 namespace LeetCode._0_50
 {
