@@ -3,7 +3,7 @@ using LeetCode._0_50;
 using LeetCode.Tests.Utils;
 using Xunit;
 
-namespace LeetCode.Tests._0_50
+namespace LeetCode.Tests._000_050
 {
     public class _015_3Sum_Test
     {

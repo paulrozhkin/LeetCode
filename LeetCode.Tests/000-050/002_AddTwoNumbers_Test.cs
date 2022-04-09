@@ -2,7 +2,7 @@
 using LeetCode.Tests.Utils;
 using Xunit;
 
-namespace LeetCode.Tests._0_50
+namespace LeetCode.Tests._000_050
 {
     public class _002_AddTwoNumbers_Test
     {
