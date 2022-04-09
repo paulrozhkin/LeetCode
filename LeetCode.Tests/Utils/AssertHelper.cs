@@ -1,4 +1,5 @@
-﻿using LeetCode.Models;
+﻿using System.Collections.Generic;
+using LeetCode.Models;
 using Xunit;
 
 namespace LeetCode.Tests.Utils
@@ -20,6 +21,30 @@ namespace LeetCode.Tests.Utils
             }
 
             Assert.Null(current);
+        }
+
+        public static void AssertList<T>(T[] expected, IList<T> actual)
+        {
+            Assert.Equal(expected.Length, actual.Count);
+
+            for (int i = 0; i < expected.Length; i++)
+            {
+                Assert.Equal(expected[i], actual[i]);
+            }
+        }
+
+        public static void AssertList<T>(IList<IList<T>> expected, IList<IList<T>> actual)
+        {
+            Assert.Equal(expected.Count, actual.Count);
+
+            for (int i = 0; i < expected.Count; i++)
+            {
+                Assert.Equal(expected[i].Count, actual[i].Count);
+                for (int j = 0; j < expected[i].Count; j++)
+                {
+                    Assert.Equal(expected[i][j], actual[i][j]);
+                }
+            }
         }
     }
 }
