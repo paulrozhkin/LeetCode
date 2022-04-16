@@ -7,7 +7,7 @@
             return BinarySearchRotated(nums, target, 0, nums.Length - 1);
         }
 
-        public int BinarySearchRotated(int[] nums, int target, int left, int right)
+        private int BinarySearchRotated(int[] nums, int target, int left, int right)
         {
             if (left <= right)
             {
